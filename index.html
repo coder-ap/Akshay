@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+            <title>This is the BMI calculator</title>
+
+            <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+<link rel="stylesheet" href="styles.css">
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+</head>
+
+<body>
+            <br>
+            <br><br><br>
+            <div class="container">
+            <div class="col-sm-12 col-lg-6">
+                  <div class="card">
+                        <div class="card-header">Body Mass Index ( BMI )<br>
+                                                 A measure for body fats in adults                       </div>
+
+                        <div class="card-body" >
+                        <form onsubmit="return false">
+                              <div class="form-group">
+                              <label> Weight </label>
+                              <input type="number" name="" required id="Weight" class="form-control" placeholder="Enter your weight in Kg">
+                        </div>
+                        <div class="form-group">
+                              <label> Height </label>
+                              <input type="text" name="" required id="Height" class="form-control" placeholder="Enter your height in Ft">
+                        </div>
+                        <div class="form-group">
+                              <label> BMI value </label>
+                              <input type="number" name="" id="BMI" class="form-control">
+                        </div>
+                        <div>
+                              <button type="submit" class="btn btn-success" onclick="getbmi()">Check BMI</button>
+                              </div>      
+                        </form>
+                        </div>
+                        <div class="card-footer text-center">The healthy BMI ranges between 19 and 25</div>
+
+                  </div>
+
+
+            </div>
+            </div>
+
+            <script>
+
+            function getbmi()
+             {
+                   var a=document.getElementById('Weight').value;
+                   var b=document.getElementById('Height').value;
+
+                   b=b*12;
+                   b=b*0.025; //now height is in meters
+
+                   var newbmi=a/(b*b);
+                        newbmi=Math.floor(newbmi);
+
+                   document.getElementById('BMI').value=newbmi;
+            }
+                  </script>
+</body>
+
+
+</html>
